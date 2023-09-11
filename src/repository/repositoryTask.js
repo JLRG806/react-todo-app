@@ -7,8 +7,8 @@ const localStorageIdentifier = "tasksList"
 RepositoryTask.createTask = ({ taskName, taskNotes, lastChange, category }) => {
     try {
         const newId = uuidv4()
-        console.log(this.getTasks())
-        let tasksList = this.getTasks()
+        let tasksList = RepositoryTask.getTasks()
+
         tasksList.push({
             id: newId,
             taskName: taskName,
@@ -57,7 +57,7 @@ RepositoryTask.updateTask = ({ id, taskName, taskNotes, lastChange, category }) 
 }
 
 RepositoryTask.deleteTask = (id) => {
-    let tasksList = this.getTasks()
+    let tasksList = RepositoryTask.getTasks()
 
     const newTasksList = tasksList.filter((taskItem) => {
 
