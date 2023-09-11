@@ -3,8 +3,8 @@ import { RepositoryTask } from "../repository/repositoryTask"
 export const ServiceTask = {}
 
 
-ServiceTask.createTask = ({ taskName, taskNotes, lastChange, category }) => {
-
+ServiceTask.createTask = (taskProperties) => {
+    const { taskName, taskNotes, lastChange, category } = taskProperties;
     const response = RepositoryTask.createTask({ taskName, taskNotes, lastChange, category })
 
     return response
