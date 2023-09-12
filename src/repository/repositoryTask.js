@@ -71,3 +71,12 @@ RepositoryTask.deleteTask = (id) => {
     setTasks(newTasksList)
 }
 
+RepositoryTask.searchTaskByName = (taskName) => {
+    let tasksList = RepositoryTask.getTasks()
+
+    const resultSearch = tasksList.filter((taskItem) => {
+        return taskItem.taskName.toLowerCase().includes(taskName.toLowerCase())
+    })
+    return resultSearch
+}
+
