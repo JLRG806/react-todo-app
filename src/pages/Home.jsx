@@ -27,7 +27,7 @@ export function Home() {
     //TODO:Refactor search with useEffect(), reason asynchronous
     function onSearch(e) {
         const searchString = e.target.value
-        setTaskList(newTask.searchTasksByTaskName(searchString))
+        setTaskList(ServiceTask.searchTaskByName(searchString))
     }
 
     const onCloseModal = () => {
