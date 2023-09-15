@@ -1,12 +1,16 @@
 import { ServiceTask } from "../service/serviceTask"
 import { Table } from "./../components/Table"
 import { Modal } from "./../components/Modal.jsx"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function Home() {
 
+
+    const [taskList, setTaskList] = useState("")
     //TODO: Refactor the initial state of task list using useEffect() hook, reason asynchronous.
-    const [taskList, setTaskList] = useState(ServiceTask.getTasks())
+    useEffect(() => {
+        setTaskList(ServiceTask.getTasks())
+    }, [])
 
     const [modalStatus, setModalStatus] = useState(false)
 
@@ -22,7 +26,6 @@ export function Home() {
 
         setTaskList(ServiceTask.getTasks())
     }
-
 
     //TODO:Refactor search with useEffect(), reason asynchronous
     function onSearch(e) {
