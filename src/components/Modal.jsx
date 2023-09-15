@@ -46,7 +46,13 @@ export function Modal({ children, status, onCloseModal }) {
             <>
                 <div className="modal-body">
                     <div className="hidden modal">
-                        <label htmlFor="taskName" className="mb-4">
+
+                        <div className="container-none shadow-sm h-10 bg-aqua flex items-center justify-center">
+                            <div className="text-xl">
+                                <h1>Create new Task</h1>
+                            </div>
+                        </div>
+                        <label htmlFor="taskName" className="my-4">
                             <input name="taskName" id="taskName" onChange={(e) => setTaskName(e.target.value)} className="appearance-none block w-[250px] bg-gray-200 text-gray-700 border rounded-full py-2 px-4 mx-4 focus:outline-none focus:bg-white" type="text" placeholder="Task Name..." />
                         </label>
 
